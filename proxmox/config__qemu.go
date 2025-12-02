@@ -1130,6 +1130,10 @@ func (raw *rawConfigQemu) Get(vmr *VmRef) (*ConfigQemu, error) {
 }
 
 func (raw *rawConfigQemu) get(vmr *VmRef) (*ConfigQemu, error) {
+	vmId := GuestID(0)
+	if vmr != nil {
+		vmId = vmr.vmId
+	}
 	config := ConfigQemu{
 		Agent:            raw.GetAgent(),
 		CPU:              raw.GetCPU(),
@@ -1137,7 +1141,7 @@ func (raw *rawConfigQemu) get(vmr *VmRef) (*ConfigQemu, error) {
 		Description:      util.Pointer(raw.GetDescription()),
 		Memory:           raw.GetMemory(),
 		Name:             util.Pointer(raw.GetName()),
-		Networks:         raw.GetNetworks(vmr.vmId),
+		Networks:         raw.GetNetworks(vmId),
 		PciDevices:       raw.GetPciDevices(),
 		Protection:       util.Pointer(raw.GetProtection()),
 		RandomnessDevice: raw.GetRandomnessDevice(),
