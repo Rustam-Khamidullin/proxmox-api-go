@@ -1105,7 +1105,7 @@ type RawConfigQemu interface {
 	GetDescription() string
 	GetMemory() *QemuMemory
 	GetName() GuestName
-	GetNetworks() QemuNetworkInterfaces
+	GetNetworks(vmId GuestID) QemuNetworkInterfaces
 	GetPciDevices() QemuPciDevices
 	GetProtection() bool
 	GetRandomnessDevice() *VirtIoRNG
@@ -1137,7 +1137,7 @@ func (raw *rawConfigQemu) get(vmr *VmRef) (*ConfigQemu, error) {
 		Description:      util.Pointer(raw.GetDescription()),
 		Memory:           raw.GetMemory(),
 		Name:             util.Pointer(raw.GetName()),
-		Networks:         raw.GetNetworks(),
+		Networks:         raw.GetNetworks(vmr.vmId),
 		PciDevices:       raw.GetPciDevices(),
 		Protection:       util.Pointer(raw.GetProtection()),
 		RandomnessDevice: raw.GetRandomnessDevice(),

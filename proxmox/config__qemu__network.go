@@ -184,16 +184,33 @@ func (config QemuNetworkInterface) mapToApi(current *QemuNetworkInterface) (sett
 	return builder.String()
 }
 
-func (QemuNetworkInterface) mapToSDK(rawParams string) (config QemuNetworkInterface) {
+func (QemuNetworkInterface) mapToSDK(rawParams string, vmId GuestID, nicId uint8) (config QemuNetworkInterface) {
 	modelAndMac := strings.SplitN(rawParams, ",", 2)
 	modelAndMac = strings.Split(modelAndMac[0], "=")
 	var model QemuNetworkModel
 	if len(modelAndMac) == 2 {
 		model = QemuNetworkModel(modelAndMac[0])
 		config.Model = &model
-		mac, _ := net.ParseMAC(modelAndMac[1])
-		config.mac = modelAndMac[1]
-		config.MAC = &mac
+		if modelAndMac[1] == "repeatable" {
+			// Generate deterministic Mac based on VmID and NicID
+			// Assume that rare VM has more than 32 nics
+			macaddr := make(net.HardwareAddr, 6)
+			pairing := uint(vmId)<<5 | uint(nicId)
+			// Linux MAC vendor - 00:18:59
+			macaddr[0] = 0x00
+			macaddr[1] = 0x18
+			macaddr[2] = 0x59
+			macaddr[3] = byte((pairing >> 16) & 0xff)
+			macaddr[4] = byte((pairing >> 8) & 0xff)
+			macaddr[5] = byte(pairing & 0xff)
+
+			config.mac = macaddr.String()
+			config.MAC = &macaddr
+		} else {
+			mac, _ := net.ParseMAC(modelAndMac[1])
+			config.mac = modelAndMac[1]
+			config.MAC = &mac
+		}
 	}
 	params := splitStringOfSettings(rawParams)
 	if v, isSet := params["bridge"]; isSet {
@@ -373,11 +390,11 @@ func (config QemuNetworkInterfaces) mapToAPI(current QemuNetworkInterfaces, para
 	return
 }
 
-func (raw *rawConfigQemu) GetNetworks() QemuNetworkInterfaces {
+func (raw *rawConfigQemu) GetNetworks(vmId GuestID) QemuNetworkInterfaces {
 	interfaces := QemuNetworkInterfaces{}
 	for i := uint8(0); i < QemuNetworkInterfacesAmount; i++ {
 		if rawInterface, isSet := raw.a[qemuPrefixApiKeyNetwork+strconv.Itoa(int(i))]; isSet {
-			interfaces[QemuNetworkInterfaceID(i)] = QemuNetworkInterface{}.mapToSDK(rawInterface.(string))
+			interfaces[QemuNetworkInterfaceID(i)] = QemuNetworkInterface{}.mapToSDK(rawInterface.(string), vmId, i)
 		}
 	}
 	if len(interfaces) > 0 {
