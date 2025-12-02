@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Telmate/proxmox-api-go/internal/parse"
-	"github.com/Telmate/proxmox-api-go/internal/util"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/internal/parse"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/internal/util"
 )
 
 const HaRule_Error_VersionTooLow = "HA rules require Proxmox VE 9.0 or higher"

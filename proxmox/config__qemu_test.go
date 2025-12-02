@@ -8,11 +8,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Telmate/proxmox-api-go/internal/util"
-	"github.com/Telmate/proxmox-api-go/test/data/test_data_guest"
-	"github.com/Telmate/proxmox-api-go/test/data/test_data_pool"
-	"github.com/Telmate/proxmox-api-go/test/data/test_data_qemu"
-	"github.com/Telmate/proxmox-api-go/test/data/test_data_tag"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/internal/util"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/test/data/test_data_guest"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/test/data/test_data_pool"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/test/data/test_data_qemu"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/test/data/test_data_tag"
 	"github.com/stretchr/testify/require"
 )
 

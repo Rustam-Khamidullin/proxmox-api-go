@@ -13,10 +13,10 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/Telmate/proxmox-api-go/cli"
-	_ "github.com/Telmate/proxmox-api-go/cli/command/commands"
-	"github.com/Telmate/proxmox-api-go/internal/util"
-	"github.com/Telmate/proxmox-api-go/proxmox"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/cli"
+	_ "github.com/Rustam-Khamidullin/proxmox-api-go/cli/command/commands"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/internal/util"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/proxmox"
 
 	"github.com/joho/godotenv"
 )

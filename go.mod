@@ -1,4 +1,4 @@
-module github.com/Telmate/proxmox-api-go
+module github.com/Rustam-Khamidullin/proxmox-api-go
 
 go 1.23.0
 

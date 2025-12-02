@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/Telmate/proxmox-api-go/proxmox"
-	api_test "github.com/Telmate/proxmox-api-go/test/api"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/proxmox"
+	api_test "github.com/Rustam-Khamidullin/proxmox-api-go/test/api"
 	"github.com/stretchr/testify/require"
 )
 

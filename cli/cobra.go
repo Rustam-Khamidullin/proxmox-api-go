@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"syscall"
 
-	"github.com/Telmate/proxmox-api-go/proxmox"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/proxmox"
 	"github.com/spf13/cobra"
 )
 

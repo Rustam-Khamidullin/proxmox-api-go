@@ -1,7 +1,7 @@
 package guest
 
 import (
-	"github.com/Telmate/proxmox-api-go/cli"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/cli"
 	"github.com/spf13/cobra"
 )
 

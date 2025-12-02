@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Telmate/proxmox-api-go/internal/util"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/internal/util"
 )
 
 type CpuArchitecture string

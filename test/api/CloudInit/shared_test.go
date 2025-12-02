@@ -3,8 +3,8 @@ package api_test
 import (
 	"net"
 
-	"github.com/Telmate/proxmox-api-go/internal/util"
-	pxapi "github.com/Telmate/proxmox-api-go/proxmox"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/internal/util"
+	pxapi "github.com/Rustam-Khamidullin/proxmox-api-go/proxmox"
 )
 
 func _create_vmref() (ref *pxapi.VmRef) {

@@ -3,10 +3,10 @@ package guest
 import (
 	"context"
 
-	"github.com/Telmate/proxmox-api-go/cli"
-	"github.com/Telmate/proxmox-api-go/cli/command/create"
-	"github.com/Telmate/proxmox-api-go/internal/util"
-	"github.com/Telmate/proxmox-api-go/proxmox"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/cli"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/cli/command/create"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/internal/util"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/proxmox"
 	"github.com/spf13/cobra"
 )
 

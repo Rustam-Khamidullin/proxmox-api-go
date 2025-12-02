@@ -3,7 +3,7 @@ package api_test
 import (
 	"os"
 
-	testConstant "github.com/Telmate/proxmox-api-go/test"
+	testConstant "github.com/Rustam-Khamidullin/proxmox-api-go/test"
 )
 
 func SetEnvironmentVariables() {

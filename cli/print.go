@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/Telmate/proxmox-api-go/proxmox"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/proxmox"
 )
 
 func PrintGuestStatus(out io.Writer, id proxmox.GuestID, text string) {

@@ -1,11 +1,11 @@
 package api_test
 
 import (
-	pxapi "github.com/Telmate/proxmox-api-go/proxmox"
-	"github.com/Telmate/proxmox-api-go/test"
+	pxapi "github.com/Rustam-Khamidullin/proxmox-api-go/proxmox"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/test"
 )
 
-const lxcOsTemplate = test.CtStorage + ":vztmpl/" + test.DownloadedLXCTemplate;
+const lxcOsTemplate = test.CtStorage + ":vztmpl/" + test.DownloadedLXCTemplate
 
 func _create_vmref() (ref *pxapi.VmRef) {
 	ref = pxapi.NewVmRef(200)

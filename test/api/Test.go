@@ -4,8 +4,8 @@ import (
 	"context"
 	"crypto/tls"
 
-	pxapi "github.com/Telmate/proxmox-api-go/proxmox"
-	testConstant "github.com/Telmate/proxmox-api-go/test"
+	pxapi "github.com/Rustam-Khamidullin/proxmox-api-go/proxmox"
+	testConstant "github.com/Rustam-Khamidullin/proxmox-api-go/test"
 )
 
 type Test struct {

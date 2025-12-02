@@ -3,8 +3,8 @@ package id
 import (
 	"fmt"
 
-	"github.com/Telmate/proxmox-api-go/cli"
-	"github.com/Telmate/proxmox-api-go/proxmox"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/cli"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/proxmox"
 	"github.com/spf13/cobra"
 )
 

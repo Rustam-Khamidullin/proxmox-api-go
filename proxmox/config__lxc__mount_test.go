@@ -5,7 +5,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/Telmate/proxmox-api-go/internal/util"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/internal/util"
 	"github.com/stretchr/testify/require"
 )
 

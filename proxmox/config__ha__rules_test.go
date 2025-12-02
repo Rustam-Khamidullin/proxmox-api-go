@@ -5,9 +5,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/Telmate/proxmox-api-go/internal/array"
-	"github.com/Telmate/proxmox-api-go/internal/util"
-	"github.com/Telmate/proxmox-api-go/test/data/test_data_ha"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/internal/array"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/internal/util"
+	"github.com/Rustam-Khamidullin/proxmox-api-go/test/data/test_data_ha"
 	"github.com/stretchr/testify/require"
 )
 
