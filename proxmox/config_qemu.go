@@ -484,7 +484,11 @@ func (ConfigQemu) mapToStruct(vmr *VmRef, params map[string]interface{}) (*Confi
 		}
 	}
 
-	config.Networks = QemuNetworkInterfaces{}.mapToSDK(params)
+	vmId := GuestID(0)
+	if vmr != nil {
+		vmId = vmr.vmId
+	}
+	config.Networks = QemuNetworkInterfaces{}.mapToSDK(params, vmId)
 	config.PciDevices = QemuPciDevices{}.mapToSDK(params)
 	config.Serials = SerialInterfaces{}.mapToSDK(params)
 
